@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { useCart } from '../context/CartContext';
 import { useNavigate } from 'react-router-dom';
 import { Card, CardContent } from '../components/ui/card';
@@ -6,7 +6,7 @@ import { Button } from '../components/ui/button';
 import { Separator } from '../components/ui/separator';
 import { Trash2, Plus, Minus, ShoppingBag, ArrowLeft } from 'lucide-react';
 
-const CartPage = () => {
+export default function CartPage() {
   const { items, removeItem, updateQuantity, clearCart } = useCart();
   const navigate = useNavigate();
 
@@ -148,7 +148,5 @@ const CartPage = () => {
       </div>
     </div>
   );
-};
-
-export default CartPage;
+}
 
