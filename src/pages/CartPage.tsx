@@ -6,7 +6,7 @@ import { Button } from '../components/ui/button';
 import { Separator } from '../components/ui/separator';
 import { Trash2, Plus, Minus, ShoppingBag, ArrowLeft } from 'lucide-react';
 
-export default function CartPage() {
+function CartPage() {
   const { items, removeItem, updateQuantity, clearCart } = useCart();
   const navigate = useNavigate();
 
@@ -150,3 +150,4 @@ export default function CartPage() {
   );
 }
 
+export default CartPage; 

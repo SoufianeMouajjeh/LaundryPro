@@ -7,7 +7,7 @@
     "skipLibCheck": true,
 
     /* Bundler mode */
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -29,8 +29,12 @@
     },
 
     /* Additional Options */
-    "types": ["react", "react-dom"],
-    "jsxImportSource": "react"
+    "types": ["react", "react-dom", "node"],
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

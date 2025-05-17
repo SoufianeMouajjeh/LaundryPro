@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import ServicesPage from './pages/ServicesPage'
-import CartPage from './pages/CartPage'
 import OrdersPage from './pages/OrdersPage'
 import TrackingPage from './pages/TrackingPage'
 import CheckoutPage from './pages/CheckoutPage'
@@ -20,7 +19,6 @@ const App: React.FC = () => {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/services" element={<ServicesPage />} />
-              <Route path="/cart" element={<CartPage />} />
               <Route path="/orders" element={<OrdersPage />} />
               <Route path="/tracking/:orderId" element={<TrackingPage />} />
               <Route path="/checkout" element={<CheckoutPage />} />
