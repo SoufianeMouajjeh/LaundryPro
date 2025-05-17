@@ -6,11 +6,11 @@ import { Button } from '../components/ui/button';
 import { Separator } from '../components/ui/separator';
 import { Trash2, Plus, Minus, ShoppingBag, ArrowLeft } from 'lucide-react';
 
-const CartPage: React.FC = () => {
+const CartPage = () => {
   const { items, removeItem, updateQuantity, clearCart } = useCart();
   const navigate = useNavigate();
 
-  const handleQuantityChange = (itemId: number, change: number) => {
+  const handleQuantityChange = (itemId: string, change: number) => {
     const currentItem = items.find(item => item.itemId === itemId);
     if (currentItem && currentItem.quantity !== undefined) {
       const newQuantity = Math.max(1, currentItem.quantity + change);
