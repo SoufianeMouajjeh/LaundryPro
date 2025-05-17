@@ -9,5 +9,16 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src')
     }
+  },
+  optimizeDeps: {
+    include: [
+      'lucide-react',
+      'class-variance-authority',
+      '@radix-ui/react-slot',
+      '@radix-ui/react-separator',
+      'clsx',
+      'tailwind-merge',
+      'tailwindcss-animate'
+    ]
   }
 }) 
