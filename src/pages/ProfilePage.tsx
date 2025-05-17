@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 // Define interfaces for user data (adjust based on your actual API response)
 interface UserProfile {

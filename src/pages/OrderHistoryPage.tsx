@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useAuth } from '../context/AuthContext';
+import { useState, useEffect } from 'react';
+
 import { Link } from 'react-router-dom';
 import { ListOrdered, Loader, AlertCircle, Eye } from 'lucide-react'; // Removed unused icons
 
@@ -29,8 +29,8 @@ interface Order {
   items: OrderItem[];
 }
 
+// Import statements should be at the top of the file
 const OrderHistoryPage: React.FC = () => {
-  const { user } = useAuth();
   const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -39,7 +39,6 @@ const OrderHistoryPage: React.FC = () => {
 
   useEffect(() => {
     const fetchOrders = async () => {
-      if (!user) return;
       setLoading(true);
       setError(null);
       try {
@@ -63,9 +62,8 @@ const OrderHistoryPage: React.FC = () => {
         setLoading(false);
       }
     };
-
     fetchOrders();
-  }, [user]);
+  }, []); // Remove user dependency since it's not defined/used
 
   const formatDateTime = (isoString: string) => {
     try {

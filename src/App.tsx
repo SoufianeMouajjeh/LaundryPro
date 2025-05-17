@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
+import Home from './pages/Home'
 import ServicesPage from './pages/ServicesPage'
 import CartPage from './pages/CartPage'
 import OrdersPage from './pages/OrdersPage'
@@ -17,7 +18,7 @@ const App: React.FC = () => {
           <Navbar />
           <main className="container mx-auto px-4 py-8">
             <Routes>
-              <Route path="/" element={<ServicesPage />} />
+              <Route path="/" element={<Home />} />
               <Route path="/services" element={<ServicesPage />} />
               <Route path="/cart" element={<CartPage />} />
               <Route path="/orders" element={<OrdersPage />} />
@@ -28,7 +29,7 @@ const App: React.FC = () => {
           <footer className="border-t">
             <div className="container mx-auto px-4 py-6">
               <p className="text-center text-sm text-muted-foreground">
-                © {new Date().getFullYear()} LaundryPro. All rights reserved.
+                © {new Date().getFullYear()} Pressing App. All rights reserved.
               </p>
             </div>
           </footer>

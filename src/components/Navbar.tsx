@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
-import { ShoppingCart, Package, Truck, User, List, LogOut, Home, Shirt, Sparkles } from 'lucide-react';
+import { Package, Home, } from 'lucide-react';
 import { ShoppingBag, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 // Assuming you have a logo image in your assets
@@ -17,9 +17,9 @@ const Navbar: React.FC = () => {
   const cartItemCount = items.reduce((sum, item) => sum + (item.quantity || 1), 0);
 
   const navItems = [
-    { path: '/', label: 'Home', icon: <Home className="h-5 w-5" /> },
+    { path: '/', label: 'Accueil', icon: <Home className="h-5 w-5" /> },
     { path: '/services', label: 'Services', icon: <Package className="h-5 w-5" /> },
-    { path: '/orders', label: 'Orders', icon: <Package className="h-5 w-5" /> },
+    { path: '/orders', label: 'Commandes', icon: <Package className="h-5 w-5" /> },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
               <Package className="h-6 w-6 text-primary" />
-              <span className="text-xl font-bold">LaundryPro</span>
+              <span className="text-xl font-bold">Pressing App</span>
             </Link>
           </div>
 

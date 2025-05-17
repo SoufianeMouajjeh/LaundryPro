@@ -12,13 +12,13 @@ const CartPage: React.FC = () => {
 
   const handleQuantityChange = (itemId: number, change: number) => {
     const currentItem = items.find(item => item.itemId === itemId);
-    if (currentItem) {
+    if (currentItem && currentItem.quantity !== undefined) {
       const newQuantity = Math.max(1, currentItem.quantity + change);
       updateQuantity(itemId, newQuantity);
     }
   };
 
-  const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const subtotal = items.reduce((sum, item) => sum + (item.price * (item.quantity ?? 0)), 0);
   const tax = subtotal * 0.1; // 10% tax
   const total = subtotal + tax;
 

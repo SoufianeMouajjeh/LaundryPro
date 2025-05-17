@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 const Footer: React.FC = () => {
   // Basic footer styling, replace with Tailwind or proper CSS later

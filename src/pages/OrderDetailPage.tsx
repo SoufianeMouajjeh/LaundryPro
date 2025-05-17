@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
 import { ArrowLeft, AlertCircle, Loader, Calendar, Edit3, List, DollarSign, Hash, XCircle } from 'lucide-react';
 
 // Define interface for Order Item
@@ -45,7 +44,7 @@ interface Order {
 
 const OrderDetailPage: React.FC = () => {
   const { orderId } = useParams<{ orderId: string }>();
-  const { user } = useAuth();
+  
   // const navigate = useNavigate(); // Removed as navigation is not used directly here
   const [order, setOrder] = useState<Order | null>(null);
   const [loading, setLoading] = useState(true);
@@ -57,7 +56,7 @@ const OrderDetailPage: React.FC = () => {
 
   useEffect(() => {
     const fetchOrderDetails = async () => {
-      if (!user || !orderId) return;
+      if (!orderId) return;
       setLoading(true);
       setError(null);
       try {
@@ -82,9 +81,8 @@ const OrderDetailPage: React.FC = () => {
         setLoading(false);
       }
     };
-
     fetchOrderDetails();
-  }, [user, orderId]);
+  }, [orderId]); // Removed 'user' from dependency array since it's not used
 
   const handleCancelOrder = async () => {
     if (!order || order.status !== 'Scheduled Pickup') return;

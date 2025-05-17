@@ -4,7 +4,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useOrders } from '../context/OrdersContext';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../components/ui/card';
 import { Button } from '../components/ui/button';
-import { Badge } from '../components/ui/badge';
 import { Separator } from '../components/ui/separator';
 import { Input } from '../components/ui/input';
 import { Package, Truck, CheckCircle, Clock, ArrowLeft, Search } from 'lucide-react';

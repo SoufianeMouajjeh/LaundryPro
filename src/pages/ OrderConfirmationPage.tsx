@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { useLocation, Link, Navigate } from 'react-router-dom';
 
 // Define interface for Order Item (matching backend)
