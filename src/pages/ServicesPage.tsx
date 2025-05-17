@@ -3,9 +3,7 @@ import { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
-import { Badge } from '../components/ui/badge';
-import { Separator } from '../components/ui/separator';
-import { Plus, Minus, ShoppingCart, Package, Shirt, Sparkles } from 'lucide-react';
+import { Plus, Minus, ShoppingCart } from 'lucide-react';
 
 // Define interfaces
 interface LaundryItem {
@@ -170,7 +168,8 @@ const ServicesPage: React.FC = () => {
       itemId: item.id,
       name: item.name,
       price: item.price,
-      quantity: quantity
+      quantity: quantity,
+      unit: undefined
     });
   };
 

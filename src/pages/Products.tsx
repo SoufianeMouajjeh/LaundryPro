@@ -10,9 +10,6 @@ export default function Products() {
 
   const categories = Array.from(new Set(products.map((product) => product.category)));
 
-  const filteredProducts = products.filter(
-    (product) => product.category === selectedCategory
-  );
 
   return (
     <div className="container mx-auto px-4 py-8">

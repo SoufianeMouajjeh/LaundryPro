@@ -2,6 +2,7 @@ import * as React from 'react';
 import { createContext, useContext, useState, ReactNode } from 'react';
 
 interface CartItem {
+  unit: any;
   itemId: string;
   name: string;
   price: number;
